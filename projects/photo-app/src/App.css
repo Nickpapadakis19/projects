@@ -25,6 +25,12 @@ body{
   font-size: 3.5em;
   font-family: 'Bungee Shade', cursive;
 }
+#photo{
+  width: 90%;
+  margin-bottom: 1em;
+  border: 1px solid #fff;
+  animation: fade .8s;
+}
 
 #home-div{
   background-color: #222;
@@ -33,7 +39,9 @@ body{
   animation: fade .8s;
 }
 #home-info{
-  color: #fff;
+  color: #000;
+  border: 1px solid black;
+  background-color: #eee;
 }
 #sign-in{
   width: 70%;
@@ -51,7 +59,7 @@ body{
   background-color: rgb(164, 0, 0);
   position: absolute;
   z-index: 99999;
-  min-width: 300px;
+  width: 200px;
   min-height: 300px;
   top: 40%;
   left: 50%;
@@ -63,6 +71,34 @@ body{
 #inner-div{
   background-color: #222;
   color: white;
+  padding: 1em;
+}
+#button-div{
+  margin-top: 1em;
+
+}
+.input{
+  width: 10em;
+}
+#sign-btn{
+  cursor: pointer;
+}
+#cancel{
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 750px){
+  .App-header{
+    font-size: 65%;
+  }
+}
+@media only screen and (max-width: 420px){
+  .App-header{
+    font-size: 40%;
+
+  }
+
 }
 
 @keyframes App-logo-spin {

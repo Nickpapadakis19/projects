@@ -9,13 +9,15 @@ class SignIn extends Component{
       <div id="outer-div">
         <div id="inner-div">
             <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
-            <h3>User Name</h3>
-            <input type="text" />
-            <h3>Password</h3>
-            <input type="password" />
+            <h5>Username: &nbsp;
+            <input type="text" className="input"/>
+            </h5>
+            <h5>Password: &nbsp;
+            <input type="password"  className="input"/>
+            </h5>
             <div id="button-div">
-             <button>Sign-in</button>
-             <Link to="/"><button>Cancel</button></Link>
+             <Link to="/Photo"><button id="sign-btn">Sign-in</button></Link>
+             <Link to="/"><button id="cancel">Cancel</button></Link>
             </div>
         </div>
       </div>
