@@ -27,11 +27,35 @@ body{
 }
 #photo{
   width: 90%;
-  margin-bottom: 1em;
   border: 1px solid #fff;
+    margin-top: 1em;
+}
+#photo-div{
+  border: 1px solid #fff;
+  background-color: rgb(164, 0, 0);
+  color: #eee;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 99999;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  box-shadow: 3px 3px 3px black;
+  padding: 1em;
+  transform: translate(-50%, -50%);
   animation: fade .8s;
 }
-
+#star-div{
+  font-size: 150%;
+  margin-bottom: 1em;
+}
+.star{
+  cursor: pointer;
+}
+.checked{
+  color: yellow;
+}
 #home-div{
   background-color: #222;
   overflow: hidden;
@@ -97,6 +121,9 @@ body{
   .App-header{
     font-size: 40%;
 
+  }
+  #photo-div{
+    font-size: 50%;
   }
 
 }

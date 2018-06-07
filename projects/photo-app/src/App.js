@@ -7,7 +7,19 @@ import SignIn from './Screens/SignIn.js';
 import Photo from './Screens/Photo.js';
 
 class App extends Component {
+constructor(props){
+  super(props)
 
+  this.state = {
+    user : {
+      userID : '',
+      password : '',
+      date : '',
+      rating : ''
+    }
+  }
+
+}
 
 
   render() {
