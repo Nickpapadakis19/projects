@@ -3,6 +3,7 @@ body{
   font-family: sans-serif;
   background-color: #222;
   overflow: auto;
+  max-width: 780px;
 }
 .App {
   text-align: center;
@@ -27,6 +28,7 @@ body{
 }
 #photo{
   width: 90%;
+  height: 90%;
   border: 1px solid #fff;
     margin-top: 1em;
 }
@@ -55,6 +57,13 @@ body{
 }
 .checked{
   color: yellow;
+}
+#photo-cancel{
+  margin-left: 1em;
+  cursor: pointer;
+}
+#photo-rate{
+  cursor: pointer;
 }
 #home-div{
   background-color: #222;
