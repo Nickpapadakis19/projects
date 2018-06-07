@@ -10,9 +10,10 @@ constructor(props){
 }
 
   render(){
-
+let userName = this.props.user;
     return(
       <div id="photo-div">
+        <h2>Welcome {userName}</h2>
         <img id="photo" src={photo}  alt="Landscape"/>
         <div id="star-div">
           <h3>Rate Today's Photo</h3>

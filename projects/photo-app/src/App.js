@@ -30,8 +30,13 @@ this.userRating = this.userRating.bind(this);
 this.userInfo = this.userInfo.bind(this);
 }
 
-userInfo = () => {
+userInfo = (user) => {
+  let state = this.state;
 
+  state.user.userID = user.user;
+  state.user.password = user.password;
+
+  this.setState = ({state});
 }
 
 userRating = (event) => {
@@ -94,9 +99,11 @@ userRating = (event) => {
       <div className="App">
         <Header />
         <Route exact={true} path="/" component={Home} />
-        <Route path="/SignIn" component={SignIn} />
+        <Route path="/SignIn" render={() => (
+          <SignIn sendInfo={this.userInfo} />
+        )} />
         <Route path="/Photo" render={() => (
-        <Photo rate={this.userRating} class={this.state.class} />
+        <Photo rate={this.userRating} class={this.state.class} user={this.state.user.userID}/>
         )} />
       </div>
     </BrowserRouter>
