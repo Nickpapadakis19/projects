@@ -8,16 +8,20 @@ constructor(props){
 
   this.userID = React.createRef();
   this.password = React.createRef();
+  this.userEmail = React.createRef();
 
 }
 
 sendInfo = () => {
   let userName = this.userID.current.value;
   let password = this.password.current.value;
+  let userEmail = this.userEmail.current.value;
+
 
   let userInfo = {
     user : userName,
-    password : password
+    password : password,
+    email : userEmail
   }
 
   this.props.sendInfo(userInfo);
@@ -28,6 +32,9 @@ sendInfo = () => {
       <div id="outer-div">
         <div id="inner-div">
             <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
+            <h5>Email Address:
+            <input id="email" type="email" className="input" ref={this.userEmail}/>
+            </h5>
             <h5>Username: &nbsp;
             <input id="userId" type="text" className="input" ref={this.userID}/>
             </h5>

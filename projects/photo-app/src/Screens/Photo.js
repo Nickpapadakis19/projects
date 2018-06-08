@@ -24,7 +24,7 @@ let userName = this.props.user;
           <Link to="/Photo"><button id="five" className={this.props.class.class_five} onClick={this.props.rate}></button></Link>
         </div>
         <div>
-          <button id="photo-rate">Rate</button>
+          <button id="photo-rate" onClick={this.props.send}>Rate</button>
           <Link to="/"><button id="photo-cancel">Cancel</button></Link>
 
         </div>

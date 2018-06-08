@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
+import firebase from 'firebase';
 import './App.css';
 import Header from './Screens/Header.js';
 import Home from './Screens/Home.js';
 import SignIn from './Screens/SignIn.js';
 import Photo from './Screens/Photo.js';
+
+var config = {
+  apiKey: "AIzaSyBsTceUCv-JTVGh0MTMgJYZIMyUm1tWAG4",
+  authDomain: "my-photo-app-62a09.firebaseapp.com",
+  databaseURL: "https://my-photo-app-62a09.firebaseio.com",
+  projectId: "my-photo-app-62a09",
+  storageBucket: "my-photo-app-62a09.appspot.com",
+  messagingSenderId: "592942362420"
+};
+let firebaseDB = firebase.initializeApp(config);
 
 class App extends Component {
 constructor(props){
@@ -14,6 +25,7 @@ constructor(props){
     user : {
       userID : '',
       password : '',
+      email : '',
       date : new Date(),
       rating : ''
 
@@ -35,8 +47,10 @@ userInfo = (user) => {
 
   state.user.userID = user.user;
   state.user.password = user.password;
+  state.user.email = user.email;
 
   this.setState = ({state});
+
 }
 
 userRating = (event) => {
@@ -93,6 +107,11 @@ userRating = (event) => {
     }
   }
 
+  sendData = () => {
+    let db = firebaseDB.database().ref('user');
+    db.push(this.state.user);
+  }
+
   render() {
     return (
     <BrowserRouter>
@@ -103,7 +122,7 @@ userRating = (event) => {
           <SignIn sendInfo={this.userInfo} />
         )} />
         <Route path="/Photo" render={() => (
-        <Photo rate={this.userRating} class={this.state.class} user={this.state.user.userID}/>
+        <Photo rate={this.userRating} class={this.state.class} user={this.state.user.userID} send={this.sendData}/>
         )} />
       </div>
     </BrowserRouter>
