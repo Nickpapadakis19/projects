@@ -6,6 +6,8 @@ import Header from './Screens/Header.js';
 import Home from './Screens/Home.js';
 import SignIn from './Screens/SignIn.js';
 import Photo from './Screens/Photo.js';
+import photo from './photo.jpg'
+import photo2 from './photo2.jpg'
 
 var config = {
   apiKey: "AIzaSyBsTceUCv-JTVGh0MTMgJYZIMyUm1tWAG4",
@@ -36,6 +38,10 @@ constructor(props){
       class_three : 'fa fa-star star',
       class_four : 'fa fa-star star',
       class_five : 'fa fa-star star'
+    },
+    photos : {
+      photo_one : photo,
+      photo_two : photo2
     }
   }
 this.userRating = this.userRating.bind(this);
@@ -122,7 +128,7 @@ userRating = (event) => {
           <SignIn sendInfo={this.userInfo} />
         )} />
         <Route path="/Photo" render={() => (
-        <Photo rate={this.userRating} class={this.state.class} user={this.state.user.userID} send={this.sendData}/>
+        <Photo rate={this.userRating} class={this.state.class} user={this.state.user.userID} send={this.sendData} photo={this.state.photos.photo_two}/>
         )} />
       </div>
     </BrowserRouter>

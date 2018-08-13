@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { Link } from 'react-router-dom';
-import photo from '../photo.jpg'
+
 
 
 class Photo extends Component {
@@ -14,7 +14,7 @@ let userName = this.props.user;
     return(
       <div id="photo-div">
         <h2>Welcome {userName}</h2>
-        <img id="photo" src={photo}  alt="Landscape"/>
+        <img id="photo" src={this.props.photo}  alt="Landscape"/>
         <div id="star-div">
           <h3>Rate Today's Photo</h3>
           <Link to="/Photo"><button id="one" className={this.props.class.class_one} onClick={this.props.rate}></button></Link>
